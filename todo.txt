@@ -2,4 +2,4 @@
 --done-- making a html for landing page.
 --done-- make server and make landing page available through server
 --done-- making html for flower pages.
-make template for flower pages and reuse template.
+make guest book page
