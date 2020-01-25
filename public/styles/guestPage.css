@@ -7,7 +7,7 @@ h1 {
 
 table {
   width: 70%;
-  text-align: center;
+  text-align: left;
   margin: 0 auto;
 }
 
@@ -16,4 +16,5 @@ table th,
 table td {
   border: 1px solid black;
   border-collapse: collapse;
+  padding: 3px;
 }
