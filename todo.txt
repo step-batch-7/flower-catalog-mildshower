@@ -1,4 +1,4 @@
 --done-- make directory structure and have resource files in directories
 --done-- making a html for landing page.
-make server
+--done-- make server and make landing page available through server
 making html for flower pages.
