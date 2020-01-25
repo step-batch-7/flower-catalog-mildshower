@@ -1,0 +1,21 @@
+h3 {
+  color: rgb(251, 164, 15);
+  text-align: right;
+  padding: 15px 200px;
+  border-bottom: 1px solid black;
+  margin: 0;
+}
+
+.mainImage {
+  margin-top: 10px;
+  border: 1px solid black;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+#waterSprinkler {
+  padding-left: 70px;
+}
