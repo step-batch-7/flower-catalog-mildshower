@@ -1,0 +1,19 @@
+h1 {
+  color: rgb(251, 164, 15);
+  text-align: right;
+  padding: 15px 400px;
+  margin: 0;
+}
+
+table {
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+table,
+table th,
+table td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}

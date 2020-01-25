@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/guestPage.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><a href="index.html">&lt;&lt;</a>Guest Book</h1>
+    <h2>Leave a comment</h2>
+    <form action="submitComment" method="POST">
+      <label for="name">Name:</label><input type="text" name="name" required/><br>
+      <label for="comment">Comment:</label><textarea rows="3" name="comment" required/></textarea><br>
+      <input type="submit">
+    </form>
+    <hr>
+      <table>
+        <thead>
+          <tr>
+            <th>DATETIME</th>
+            <th>NAME</th>
+            <th>COMMENTS</th>
+          </tr>
+        </thead>
+        <tbody>
+          __tableRows__
+        </tbody>
+      </table>
+  </body>
+</html>
