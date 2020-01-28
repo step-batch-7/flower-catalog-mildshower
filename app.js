@@ -1,8 +1,7 @@
 const {readFileSync, existsSync, statSync, writeFileSync} = require('fs');
 const {parse} = require('querystring');
-const {Response} = require('./response');
-const CONTENT_TYPES = require('./contentTypes.json');
-const STATUS_MESSAGES = require('./statusMsgs.json');
+const CONTENT_TYPES = require('./lib/contentTypes.json');
+const STATUS_MESSAGES = require('./lib/statusMsgs.json');
 
 const INDENT_SPACE = 2;
 const COMMENTS_PATH = 'data/comments.json';
