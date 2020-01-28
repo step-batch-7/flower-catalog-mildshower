@@ -1,28 +1,21 @@
-const net = require('net');
-const {Request} = require('./lib/request');
-const {generateResponse} = require('./lib/app');
+const {createServer} = require('http');
+const {pickHandler} = require('./lib/app');
 
-const handleRequest = function(reqSocket) {
-  const remote = {
-    port: reqSocket.remotePort,
-    address: reqSocket.remoteAddress
-  };
-  console.info('\n\nConnection from:', remote, '\n');
-  reqSocket.setEncoding('UTF8');
-  reqSocket.on('data', msg => {
-    const req = Request.parse(msg);
-    console.log('Request From', remote, ':\n', req, '\n');
-    const response = generateResponse(req);
-    response.sendVia(reqSocket);
-  });
-  reqSocket.on('end', () => console.info('Closed connection of', remote, '\n'));
+const server = createServer();
+
+const handleRequest = function(req, res) {
+  const remote = {ip: req.socket.remoteAddress, port: req.socket.remotePort};
+  console.info('request for', req.url, 'from remote', remote);
+  req.on('error', err => console.error('error from remote', remote, err));
+  const handler = pickHandler(req);
+  handler(req, res);
 };
 
-const main = function(port) {
-  const server = new net.Server();
-  server.on('connection', handleRequest);
-  server.listen(port);
-  console.info('\nServer is On, You Can Connect To:', server.address());
-};
+server.on('request', handleRequest);
+server.on('close', () => {
+  console.info('server is closed');
+});
 
-main(process.argv[2]);
+server.listen(process.argv[2], () => {
+  console.log('server is listening on :', server.address().port);
+});
