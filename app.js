@@ -13,6 +13,11 @@ const getComments = function() {
   return JSON.parse(readFileSync(COMMENTS_PATH, 'UTF8'));
 };
 
+const saveComments = function(comments){
+  const commentsStr = JSON.stringify(comments, null, INDENT_SPACE);
+  writeFileSync('data/comments.json', commentsStr);
+};
+
 const isExistingFile = function(filePath){
   return existsSync(filePath) && statSync(filePath).isFile();
 };
@@ -81,12 +86,15 @@ const getGuestPage = function(req, res) {
 
 const performCommentSubmission = function(req, res) {
   const allComments = getComments();
+  let body = '';
   req.setEncoding('UTF8');
-  req.on('data', (msg) => {
-    const nameAndComment = parse(msg);
+  req.on('data', data => {
+    body += data;
+  });
+  req.on('end', () => {
+    const nameAndComment = parse(body);
     allComments.unshift(generateCommentObj(nameAndComment));
-    const commentsStr = JSON.stringify(allComments, null, INDENT_SPACE);
-    writeFileSync('data/comments.json', commentsStr);
+    saveComments(allComments);
     const headers = {location: 'guestPage.html'};
     res.writeHead(303, STATUS_MESSAGES[303], headers);
     res.end();
