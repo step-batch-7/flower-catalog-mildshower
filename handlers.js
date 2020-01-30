@@ -71,7 +71,7 @@ const getNotFoundResponse = function(req, res) {
       <title>NOT FOUND</title>
     </head>
     <body>
-      <h4>requested resource is not found on the server</h4>
+      <h1 style="text-align:center">OOPS! REQUESTED RESOURCE IS NOT FOUND</h1>
     </body>
   </html>`;
   res.statusCode = 404;
