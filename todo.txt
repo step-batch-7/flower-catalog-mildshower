@@ -3,3 +3,5 @@
 --done-- make server and make landing page available through server
 --done-- making html for flower pages.
 --done-- make guest book page
+add app class as controller
+modify contract between server and handler
