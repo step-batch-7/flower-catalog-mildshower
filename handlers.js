@@ -5,6 +5,7 @@ const CONTENT_TYPES = require('./lib/contentTypes.json');
 const STATUS_MESSAGES = require('./lib/statusMsgs.json');
 
 const INDENT_SPACE = 2;
+const REDIRECT_STATUS = 303;
 const COMMENTS_PATH = 'data/comments.json';
 
 const isExistingFile = function(filePath){
@@ -103,7 +104,7 @@ const performCommentSubmission = function(req, res) {
   allComments.unshift(generateCommentObj(nameAndComment));
   saveComments(allComments);
   const headers = {location: 'guestPage.html'};
-  res.writeHead(303, STATUS_MESSAGES[303], headers);
+  res.writeHead(REDIRECT_STATUS, STATUS_MESSAGES[REDIRECT_STATUS], headers);
   res.end();
 };
 
