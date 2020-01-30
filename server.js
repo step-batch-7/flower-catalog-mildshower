@@ -1,5 +1,5 @@
 const {createServer} = require('http');
-const {pickHandler} = require('./app');
+const {pickHandler} = require('./handlers.js');
 
 const server = createServer();
 
