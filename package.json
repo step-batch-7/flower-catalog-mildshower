@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/step-batch-7/flower-catalog-mildshower/issues"
   },
-  "homepage": "https://github.com/step-batch-7/flower-catalog-mildshower#readme"
+  "homepage": "https://github.com/step-batch-7/flower-catalog-mildshower#readme",
+  "devDependencies": {
+    "mocha": "^7.0.1",
+    "nyc": "^15.0.0",
+    "supertest": "^4.0.2"
+  }
 }

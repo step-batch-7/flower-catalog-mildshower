@@ -43,11 +43,8 @@ class App{
     separatePathAndQuery(req);
     const matchedHandlers = findValidHandlers(this.routes, req);
     const next = function(){
-      if(matchedHandlers.length === 0){
-        return;
-      }
       const handler = matchedHandlers.shift();
-      handler(req, res, next);
+      handler && handler(req, res, next);
     };
     next();
   }

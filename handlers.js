@@ -93,6 +93,7 @@ const getStaticFileResponse = function(req, res, next) {
 const getGuestPage = function(req, res) {
   const allComments = getComments();
   const tableRows = allComments.reduce(generateRows, '');
+  res.setHeader('Content-Type', 'text/html');
   res.end(fillTemplate('guestPage.html', {tableRows}));
 };
 
