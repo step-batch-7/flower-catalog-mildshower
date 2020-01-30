@@ -111,7 +111,7 @@ const app = new App();
 app.use(gatherBody);
 app.get(getGuestPage, '/guestPage.html');
 app.get(getStaticFileResponse);
-app.post(performCommentSubmission);
+app.post(performCommentSubmission, '/submitComment');
 app.use(getNotFoundResponse);
 
 module.exports = {app};
