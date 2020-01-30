@@ -7,8 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "nyc mocha",
+    "start": "node server.js 2000"
   },
   "repository": {
     "type": "git",
