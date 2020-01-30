@@ -1,3 +1,4 @@
+const {parse} = require('querystring');
 const {info} = require('console');
 
 const findValidHandlers = function(routes, req){
@@ -9,9 +10,15 @@ const findValidHandlers = function(routes, req){
     if(route.path === undefined){
       return areMethodsSame;
     }
-    return areMethodsSame && route.path === req.url;
+    return areMethodsSame && route.path === req.path;
   });
   return validRoutes.map(route => route.handler);
+};
+
+const separatePathAndQuery = function(req){
+  const [path, queryStr] = req.url.split('?');
+  req.query = parse(queryStr);
+  req.path = path;
 };
 
 class App{
@@ -33,6 +40,7 @@ class App{
 
   serve(req, res){
     info(`Request ${req.socket.remotePort}:${req.method}${req.url}`);
+    separatePathAndQuery(req);
     const matchedHandlers = findValidHandlers(this.routes, req);
     const next = function(){
       if(matchedHandlers.length === 0){
