@@ -1,0 +1,23 @@
+{
+  "name": "flower-catalogue",
+  "version": "0.0.1",
+  "description": "assignment",
+  "main": "server.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/step-batch-7/flower-catalog-mildshower.git"
+  },
+  "author": "Sudipta Kundu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/step-batch-7/flower-catalog-mildshower/issues"
+  },
+  "homepage": "https://github.com/step-batch-7/flower-catalog-mildshower#readme"
+}
