@@ -1,3 +1,5 @@
+const {info} = require('console');
+
 const findValidHandlers = function(routes, req){
   const validRoutes = routes.filter(route => {
     if(!route.method) {
@@ -30,6 +32,7 @@ class App{
   }
 
   serve(req, res){
+    info(`Request ${req.socket.remotePort}:${req.method}${req.url}`);
     const matchedHandlers = findValidHandlers(this.routes, req);
     const next = function(){
       if(matchedHandlers.length === 0){

@@ -4,4 +4,4 @@
 --done-- making html for flower pages.
 --done-- make guest book page
 --done-- add app class as controller
-modify contract between server and handler
+--done-- modify contract between server and handler
