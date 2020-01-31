@@ -7,9 +7,9 @@ describe('GET', function() {
       .get('/')
       .expect(200)
       .expect('Content-Type', 'text/html')
-      .expect('Content-Length', '751')
+      .expect('Content-Length', '749')
       .expect('Date', /./)
-      .expect(/Flower Catalogue/, done);
+      .expect(/Flower Catalog/, done);
   });
 
   it('validFilePath should give the file', function(done){
