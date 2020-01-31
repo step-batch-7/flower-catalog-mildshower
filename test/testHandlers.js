@@ -40,7 +40,7 @@ describe('GET', function() {
 });
 
 describe('POST', function() {
-  it.only('/submitComment should redirect me to the guestBook', function(done) {
+  it('/submitComment should redirect me to the guestBook', function(done) {
     request((req, res) => app.serve(req, res))
       .post('/submitComment')
       .send('name=user+name&comment=user+given+comment')
