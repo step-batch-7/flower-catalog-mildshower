@@ -7,4 +7,4 @@
 --done-- modify contract between server and handler
 --done-- introduce comment class
 --done-- do body parsing in general handler
-* introduce comments class
+--done-- introduce comments class
