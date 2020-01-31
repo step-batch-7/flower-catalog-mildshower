@@ -1,5 +1,5 @@
 const request = require('supertest');
-const {app} = require('../handlers');
+const {app} = require('../lib/handlers');
 
 describe('GET', function() {
   it('\'/\' should give index.html', function(done) {
