@@ -5,3 +5,6 @@
 --done-- make guest book page
 --done-- add app class as controller
 --done-- modify contract between server and handler
+--done-- introduce comment class
+* do body parsing in general handler
+* introduce comments class
