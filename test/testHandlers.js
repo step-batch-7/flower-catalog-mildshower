@@ -13,7 +13,7 @@ describe('GET', function() {
       .expect(/Flower Catalog/, done);
   });
 
-  it('validFilePath should give the file', function(done){
+  it('validFilePath should give the file', function(done) {
     request((req, res) => app.serve(req, res))
       .get('/agerantum.html')
       .expect(200)
@@ -23,7 +23,7 @@ describe('GET', function() {
       .expect(/Agerantum/, done);
   });
 
-  it('guestPage.html should give dynamic guestPages', function(done){
+  it('guestPage.html should give dynamic guestPages', function(done) {
     request((req, res) => app.serve(req, res))
       .get('/guestPage.html')
       .expect(200)
@@ -47,7 +47,8 @@ describe('POST', function() {
       .expect('location', 'guestPage.html')
       .expect(303, done);
   });
-  afterEach(function(){
-    writeFileSync('test/resources/comments.json', '');
+  afterEach(function() {
+    const testComments = [{name: 'Name', comment: 'Comment', time: 'Time'}];
+    writeFileSync('test/resource/comments.json', JSON.stringify(testComments));
   });
 });

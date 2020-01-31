@@ -1,5 +1,4 @@
 .DS_STORE
-data/comments.json
 .nyc_output
 coverage
 node_modules

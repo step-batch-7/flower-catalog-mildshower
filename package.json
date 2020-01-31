@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "export COMMENTS_STORE_PATH=\"test/resources/comments.json\"; nyc mocha",
+    "test": "export COMMENTS_STORE_PATH=\"test/resource/comments.json\"; nyc --reporter=html mocha",
     "start": "export COMMENTS_STORE_PATH=\"data/comments.json\"; node server.js 2000"
   },
   "repository": {
