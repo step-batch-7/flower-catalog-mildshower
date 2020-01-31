@@ -1,3 +1,4 @@
+const {writeFileSync} = require('fs');
 const request = require('supertest');
 const {app} = require('../lib/handlers');
 
@@ -35,5 +36,18 @@ describe('GET', function() {
     request((req, res) => app.serve(req, res))
       .get('/doesNotExist')
       .expect(404, done);
+  });
+});
+
+describe('POST', function() {
+  it.only('/submitComment should redirect me to the guestBook', function(done) {
+    request((req, res) => app.serve(req, res))
+      .post('/submitComment')
+      .send('name=user+name&comment=user+given+comment')
+      .expect('location', 'guestPage.html')
+      .expect(303, done);
+  });
+  afterEach(function(){
+    writeFileSync('test/resources/comments.json', '');
   });
 });
