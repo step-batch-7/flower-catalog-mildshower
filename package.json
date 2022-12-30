@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/step-batch-7/flower-catalog-mildshower#readme",
   "devDependencies": {
-    "mocha": "^7.0.1",
+    "mocha": "^10.2.0",
     "nyc": "^15.0.0",
     "supertest": "^4.0.2"
   }
